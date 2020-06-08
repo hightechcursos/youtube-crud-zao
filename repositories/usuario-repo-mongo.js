@@ -1,15 +1,17 @@
 const mongoose =  require("mongoose")
-const UsuarioSchema =  require("../schemas/usuarioSchema")
+const UsuarioModel =  require("../model/usuario-model")
 
-class UsuarioRepositoryMongo  extends mongoose.model{
+class UsuarioRepositoryMongo {
 
     constructor(){
-       super("Usuario", new UsuarioSchema())
+        this.model =  UsuarioModel;
     }
 
-   async adicionar(usuario){
-        console.log(usuario)
-       // await  this.create(usuario)
+     adicionar(usuario){
+        
+       const doc= new this.model(usuario)
+       doc.super.save()
+
     }
 
     excluir (email){

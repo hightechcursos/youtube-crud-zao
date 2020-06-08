@@ -1,6 +1,6 @@
 const express = require('express')
 var router = express.Router()
-const Usuario =  require("../models/usuario")
+const Usuario =  require("../domain/usuario-domain")
 const UsuarioService =  require("../services/usuario-service")
 var usuarioService = new UsuarioService()
 
