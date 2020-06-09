@@ -1,17 +1,12 @@
-const mongoose =  require("mongoose")
-const Usuario =  require("../domain/usuario-domain")
-module.exports  = class UsuarioSchema  extends mongoose.Schema{
+const mongoose = require("mongoose")
+const Usuario = require("../domain/usuario-domain")
+const UsuarioSchema = mongoose.Schema({
+    email: String,
+    nome: String,
+    senha: String,
+    dataCadastro: Date
+})
 
-    constructor(){
-        super({
-            email: String ,
-            nome : String,
-            senha: String,
-            dataCadastro: Date   
-        })
+UsuarioSchema.loadClass(Usuario)
 
-
-        this.loadClass(Usuario)
-        
-    }
-}
+module.exports = mongoose.model("Usuario", UsuarioSchema)

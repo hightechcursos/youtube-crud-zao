@@ -1,33 +1,33 @@
-const mongoose =  require("mongoose")
-const UsuarioModel =  require("../model/usuario-model")
+const mongoose = require("mongoose")
+const UsuarioModel = require("../model/usuario-model")
 
 class UsuarioRepositoryMongo {
 
-    constructor(){
-        this.model =  UsuarioModel;
+    constructor() {
+        this.model = UsuarioModel;
     }
 
-     adicionar(usuario){
-        
-       const doc= new this.model(usuario)
-       doc.super.save()
+    adicionar(usuario) {
 
-    }
-
-    excluir (email){
-        
-    }
-
-    alterar(usuario){
-       
-        
-    }
-
-    buscar(usuario){
+        const doc = new this.model(usuario)
+        doc.save()
 
     }
 
-    buscarTodos(){
+    excluir(email) {
+
+    }
+
+    alterar(usuario) {
+
+
+    }
+
+    buscar(usuario) {
+
+    }
+
+    buscarTodos() {
         return ""
     }
 
