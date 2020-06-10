@@ -7,6 +7,11 @@ const UsuarioSchema = mongoose.Schema({
     dataCadastro: Date
 })
 
+//indexes
+// UsuarioSchema.index({
+//     email: 1
+// })
+//Load 
 UsuarioSchema.loadClass(Usuario)
 
 module.exports = mongoose.model("Usuario", UsuarioSchema)
