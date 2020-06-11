@@ -1,10 +1,10 @@
 const UsuarioRepoArray = require("../repositories/usuario-repo-array")
-const UsuarioRepoMongo = require ("../repositories/usuario-repo-mongo")
+
 class UsuarioService{
 
     constructor(){
         //Muda
-        this.usuarioRepository = new UsuarioRepoMongo()
+        this.usuarioRepository = new UsuarioRepoArray()
     }
 
     adicionar(usuario){
