@@ -1,29 +1,29 @@
 const UsuarioRepoArray = require("../repositories/usuario-repo-array")
-const UsuarioRepoMongo = require ("../repositories/usuario-repo-mongo")
-class UsuarioService{
+const UsuarioRepoMongo = require("../repositories/usuario-repo-mongo")
+class UsuarioService {
 
-    constructor(){
+    constructor() {
         //Muda
         this.usuarioRepository = new UsuarioRepoMongo()
     }
 
-    adicionar(usuario){
+    adicionar(usuario) {
         this.usuarioRepository.adicionar(usuario)
     }
 
-    excluir (email){
+    excluir(email) {
         this.usuarioRepository.excluir(email)
     }
 
-    alterar(usuario){
+    alterar(usuario) {
         this.usuarioRepository.alterar(usuario)
     }
 
-    buscar(usuario){
+    buscar(usuario) {
 
     }
 
-    buscarTodos(){
+    async buscarTodos() {
         return this.usuarioRepository.buscarTodos()
     }
 

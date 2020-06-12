@@ -32,10 +32,15 @@ class UsuarioRepositoryMongo {
         })
     }
 
-    buscar(usuario) {}
+    buscar(usuario) {
 
-    buscarTodos() {
-        return "";
+        return this.model.find({
+            usuario
+        })
+    }
+    async buscarTodos() {
+        const result = this.model.find({})
+        return result.lean().exec()
     }
 }
 
