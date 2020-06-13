@@ -29,7 +29,9 @@ class UsuarioRepositoryMongo{
     }
 
     buscarTodos(){
-       
+       const query =  this.model.find({})
+       const promise= query.lean().exec()
+       return promise;
     }
 
 }
