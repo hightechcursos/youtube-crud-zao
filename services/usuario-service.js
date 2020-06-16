@@ -12,7 +12,7 @@ class UsuarioService {
     }
 
     excluir(email) {
-        this.usuarioRepository.excluir(email)
+        return this.usuarioRepository.excluir(email)
     }
 
     alterar(usuario) {
@@ -23,7 +23,7 @@ class UsuarioService {
 
     }
 
-    async buscarTodos() {
+    buscarTodos() {
         return this.usuarioRepository.buscarTodos()
     }
 

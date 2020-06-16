@@ -13,12 +13,12 @@ class UsuarioRepositoryMongo {
         console.log("Usuário Salvo");
     }
 
-    async excluir(email) {
+    excluir(email) {
 
-        await this.model.deleteOne({
+        return this.model.deleteOne({
             email: email
         });
-        console.log("Deletado");
+
     }
 
     async alterar(usuario) {
@@ -39,8 +39,10 @@ class UsuarioRepositoryMongo {
         })
     }
     async buscarTodos() {
-        const result = this.model.find({})
-        return result.lean().exec()
+        // const result = this.model.find({})
+        // return result.lean().exec()
+        return await this.model.find({})
+
     }
 }
 
