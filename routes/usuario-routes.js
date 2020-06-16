@@ -5,8 +5,8 @@ const UsuarioService = require("../services/usuario-service")
 var usuarioService = new UsuarioService()
 
 //Create Retrieve Update Delete 
-router.get("/usuario", (req, res) => {
-  let todos = usuarioService.buscarTodos()
+router.get("/usuario", async (req, res) => {
+  let todos = await usuarioService.buscarTodos()
   // console.log(todos)
   res.json(todos)
 })
@@ -17,9 +17,9 @@ router.post("/usuario", (req, res) => {
   res.json(usuario)
 })
 
-router.put("/usuario", (req, res) => {
+router.put("/usuario", async (req, res) => {
 
-  usuarioService.alterar(req.body)
+  await usuarioService.alterar(req.body)
   res.send('Alterado')
 
 })

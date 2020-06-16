@@ -21,15 +21,18 @@ class UsuarioRepositoryMongo {
 
     }
 
-    async alterar(usuario) {
+    alterar(usuario) {
 
-        let u = await this.model.findOne({
+        let u = this.model.findOne({
             email: usuario.email
+        }).exec()
+
+        u.then((usu) => {
+            this.model.updateOne(usu, usuario).exec()
         })
 
-        return await this.model.findByIdAndUpdate(u._id, usuario, {
-            new: true
-        })
+
+
     }
 
     buscar(usuario) {
@@ -38,10 +41,10 @@ class UsuarioRepositoryMongo {
             usuario
         })
     }
-    async buscarTodos() {
-        // const result = this.model.find({})
-        // return result.lean().exec()
-        return await this.model.find({})
+    buscarTodos() {
+        const result = this.model.find({})
+        return result.lean().exec()
+        //  return  this.model.find({})
 
     }
 }
