@@ -17,14 +17,14 @@ router.post("/usuario", (req, res)=> {
   res.json(usuario)
 })
 
-router.put("/usuario", (req, res)=>{
+router.put("/usuario", async (req, res)=>{
  
-  usuarioService.alterar(req.body)
+  await usuarioService.alterar(req.body)
   res.send('Alterado')
 
 })
-router.delete("/usuario/", (req, res)=>{
-  usuarioService.excluir(req.body.email)
+router.delete("/usuario/", async (req, res)=>{
+  await usuarioService.excluir(req.body.email)
   res.send("Excluido")
 })
 

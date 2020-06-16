@@ -15,13 +15,18 @@ class UsuarioRepositoryMongo{
     }
 
     excluir (email){
-        
+       
+        const query =  this.model.deleteOne({email})
+        query.exec()
+
 
     }
 
     alterar(usuario){
        
-        
+        const query = {email:usuario.email}
+        this.model.findOneAndUpdate(query,usuario).exec()
+
     }
 
     buscar(usuario){
@@ -31,7 +36,7 @@ class UsuarioRepositoryMongo{
     buscarTodos(){
        const query =  this.model.find({})
        const promise= query.lean().exec()
-       return promise;
+       return promise
     }
 
 }
