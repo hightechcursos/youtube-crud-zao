@@ -3,22 +3,10 @@ const app = express()
 const port = process.env.PORT || 3000
 const path = require("path")
 const usuarioRoutes = require("./routes/usuario-routes")
+const ManageDB = require("./db/ManageDB")
 
-
-var mongoose = require('mongoose');
-mongoose.connect(
-    'mongodb+srv://admin:Gjzo2Htm5xJzAeyc@cluster0-oh8l4.mongodb.net/escola?retryWrites=true&w=majority', {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-    });
-
-
-
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function () {
-    console.log("Conectado com sucesso no Mongo")
-});
+ManageDB.connect()
+//ManageDB.close()
 
 app.use(express.json())
 app.use(express.static(path.join(__dirname, 'public')))
