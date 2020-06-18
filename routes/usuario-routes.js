@@ -1,31 +1,63 @@
 const express = require('express')
-var router = express.Router()
+
 const Usuario = require("../domain/usuario-domain")
 const UsuarioService = require("../services/usuario-service")
-var usuarioService = new UsuarioService()
+const UsuarioController = require("../controllers/usuario-controller")
 
-//Create Retrieve Update Delete 
-router.get("/usuario", async (req, res) => {
-  let todos = await usuarioService.buscarTodos()
-  // console.log(todos)
-  res.json(todos)
-})
-router.post("/usuario", (req, res) => {
 
-  let usuario = new Usuario(req.body.email, req.body.nome, req.body.senha, req.requestTime);
-  usuarioService.adicionar(usuario)
-  res.json(usuario)
-})
+// var usuarioService = new UsuarioService()
 
-router.put("/usuario", async (req, res) => {
 
-  await usuarioService.alterar(req.body)
-  res.send('Alterado')
+class UsuarioRoutes {
 
-})
-router.delete("/usuario/", async (req, res) => {
-  let ex = await usuarioService.excluir(req.body.email)
-  res.send("Excluido")
-})
+    constructor() {
+        this.usuarioController = new UsuarioController()
+        this.router = express.Router()
+        this.loadRoutes()
+    }
 
-module.exports = router
+    loadRoutes() {
+        // OK 
+
+        this.router.get("/usuario", this.usuarioController.buscarTodos.bind(this.usuarioController))
+
+        //OK
+
+        // this.router.get("/usuario", (req, res) => {
+        //     this.usuarioController.buscarTodos(req, res)
+        // })
+
+        //UNDEFINED 
+        // this.router.get("/usuario", function (req, res) {
+        //     this.usuarioController.buscarTodos(req, res)
+        // })
+
+        //Create Retrieve Update Delete 
+        // router.get("/usuario", async (req, res) => {
+        //     let todos = await usuarioService.buscarTodos()
+        //     // console.log(todos)
+        //     res.json(todos)
+        // })
+        // this.router.post("/usuario", (req, res) => {
+
+        //     let usuario = new Usuario(req.body.email, req.body.nome, req.body.senha, req.requestTime);
+        //     usuarioService.adicionar(usuario)
+        //     res.json(usuario)
+        // })
+
+        // this.router.put("/usuario", async (req, res) => {
+
+        //     await usuarioService.alterar(req.body)
+        //     res.send('Alterado')
+
+        // })
+        // this.router.delete("/usuario/", async (req, res) => {
+        //     let ex = await usuarioService.excluir(req.body.email)
+        //     res.send("Excluido")
+        // })
+
+    }
+
+}
+
+module.exports = new UsuarioRoutes().router
