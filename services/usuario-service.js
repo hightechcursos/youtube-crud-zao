@@ -20,10 +20,7 @@ class UsuarioService{
     alterar(usuario){
         this.usuarioRepository.alterar(usuario)
     }
-
-    buscar(usuario){
-
-    }
+  
 
     buscarTodos(){
         return this.usuarioRepository.buscarTodos()

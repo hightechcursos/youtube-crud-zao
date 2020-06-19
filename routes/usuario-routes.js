@@ -1,31 +1,27 @@
 const express = require('express')
-var router = express.Router()
-const Usuario =  require("../domain/usuario-domain")
-const UsuarioService =  require("../services/usuario-service")
-var usuarioService = new UsuarioService()
+const UsuarioController =  require("../controllers/usuario-controller")
 
-//Create Retrieve Update Delete 
-router.get("/usuario", async (req, res)=> {
-   const usuarios =  await usuarioService.buscarTodos();
-   console.log(usuarios)
-  res.json(usuarios)
-})
-router.post("/usuario", (req, res)=> {
-  
-  let usuario = new Usuario(req.body.email, req.body.nome,  req.body.senha,req.requestTime);
-  usuarioService.adicionar(usuario)
-  res.json(usuario)
-})
+class UsuarioRoutes{
 
-router.put("/usuario", async (req, res)=>{
- 
-  await usuarioService.alterar(req.body)
-  res.send('Alterado')
+    constructor(){
+      this.usuarioController = new UsuarioController ()
+      this.router = express.Router()
+      this.loadRoutes()
+    }
 
-})
-router.delete("/usuario/", async (req, res)=>{
-  await usuarioService.excluir(req.body.email)
-  res.send("Excluido")
-})
+    loadRoutes(){
 
-module.exports =  router
+      this.router.get("/usuario", this.usuarioController.buscarTodos.bind(this.usuarioController))
+
+      this.router.post("/usuario", this.usuarioController.adicionar.bind(this.usuarioController) )
+
+      this.router.put("/usuario", this.usuarioController.alterar.bind(this.usuarioController) )
+
+      this.router.delete("/usuario/", this.usuarioController.excluir.bind(this.usuarioController) )
+
+    }
+}
+
+
+
+module.exports =  new UsuarioRoutes().router
