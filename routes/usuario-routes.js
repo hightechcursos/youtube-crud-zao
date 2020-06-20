@@ -24,4 +24,4 @@ class UsuarioRoutes{
 
 
 
-module.exports =  new UsuarioRoutes().router
+module.exports =  UsuarioRoutes
