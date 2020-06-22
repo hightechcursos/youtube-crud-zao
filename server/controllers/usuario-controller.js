@@ -1,6 +1,5 @@
-
-const UsuarioService = require("../services/usuario-service")
-const Usuario =  require("../domain/usuario-domain")
+import UsuarioService from "../services/usuario-service"
+const Usuario = require("../domain/usuario-domain")
 
 class UsuarioController {
 
