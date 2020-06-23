@@ -2,11 +2,11 @@
   "name": "api-crud",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon app.js",
-    "start": "node app.js"
+    "dev": "nodemon --experimental-modules app.mjs",
+    "start": "node app.mjs"
   },
   "author": "Virmerson - Teras Play",
   "license": "ISC",
