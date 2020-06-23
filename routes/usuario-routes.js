@@ -1,5 +1,5 @@
-const express = require('express')
-const UsuarioController =  require("../controllers/usuario-controller")
+import express from "express"
+import UsuarioController from "../controllers/usuario-controller"
 
 class UsuarioRoutes{
 
@@ -22,6 +22,4 @@ class UsuarioRoutes{
     }
 }
 
-
-
-module.exports =  UsuarioRoutes
+export default UsuarioRoutes

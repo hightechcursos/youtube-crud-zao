@@ -1,6 +1,5 @@
-
-const mongoose = require('mongoose');
-const Usuario =  require('../domain/usuario-domain')
+import mongoose from "mongoose";
+import Usuario from "../domain/usuario-domain"
 //Definindo o modelo (estrutura da collection)
 const UsuarioSchema = mongoose.Schema(
     { 
@@ -12,4 +11,4 @@ const UsuarioSchema = mongoose.Schema(
 )
 //Objeto que contem os dados
 UsuarioSchema.loadClass(Usuario)
-module.exports = mongoose.model('Usuario',UsuarioSchema );
+export default  mongoose.model('Usuario',UsuarioSchema );

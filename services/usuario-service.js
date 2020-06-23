@@ -1,6 +1,6 @@
-const UsuarioRepoArray = require("../repositories/usuario-repo-array")
+import UsuarioRepoArray from "../repositories/usuario-repo-array"
 
-const UsuarioRepoMongo = require("../repositories/usuario-repo-mongo")
+import UsuarioRepoMongo from "../repositories/usuario-repo-mongo"
 
 class UsuarioService{
 
@@ -28,4 +28,4 @@ class UsuarioService{
 
 }
 
-module.exports = UsuarioService
+export default UsuarioService

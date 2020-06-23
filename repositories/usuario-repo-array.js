@@ -27,14 +27,10 @@ class UsuarioRepositoryArray{
         
     }
 
-    buscar(usuario){
-
-    }
-
     buscarTodos(){
         return this.usuarios;
     }
 
 }
 
-module.exports = UsuarioRepositoryArray
+export default UsuarioRepositoryArray

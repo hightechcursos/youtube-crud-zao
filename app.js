@@ -1,5 +1,7 @@
-const Server  = require("./server")
-const ManageDB = require("./db/ManageDB")
+import Server  from "./server.js"
+import ManageDB from "./db/ManageDB"
+
+//ES module
 
 class App{
 

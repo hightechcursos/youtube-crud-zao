@@ -1,5 +1,4 @@
-const mongoose = require("mongoose") 
-const UsuarioModel = require("../model/usuario-model")
+import UsuarioModel from "../model/usuario-model"
 
 class UsuarioRepositoryMongo{
 
@@ -29,9 +28,7 @@ class UsuarioRepositoryMongo{
 
     }
 
-    buscar(usuario){
-
-    }
+ 
 
     buscarTodos(){
        const query =  this.model.find({})
@@ -41,4 +38,4 @@ class UsuarioRepositoryMongo{
 
 }
 
-module.exports = UsuarioRepositoryMongo
+export default UsuarioRepositoryMongo

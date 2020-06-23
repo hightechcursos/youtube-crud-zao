@@ -1,6 +1,6 @@
-const express = require('express')
-const path = require("path")
-const UsuarioRoutes = require("./routes/usuario-routes")
+import express from "express"
+import path from "path"
+import UsuarioRoutes from "./routes/usuario-routes"
 
 class Server {
 
@@ -28,7 +28,6 @@ class Server {
   
 }
 
-module.exports =  Server
-
+export default Server
 
 

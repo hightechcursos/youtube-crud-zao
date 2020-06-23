@@ -1,4 +1,4 @@
-const mongoose =  require ("mongoose")
+import  mongoose from "mongoose"
 
 class ManageDB{
 
@@ -20,4 +20,4 @@ class ManageDB{
     }
 }
 
-module.exports =ManageDB
+export default ManageDB

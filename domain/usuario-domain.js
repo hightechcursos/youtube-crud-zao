@@ -1,6 +1,4 @@
-
-
-module.exports = class Usuario{
+class Usuario{
 
     constructor(email,nome, senha, dataCadastro){
 
@@ -11,4 +9,6 @@ module.exports = class Usuario{
             
         }    
 }
+
+export default Usuario
 
