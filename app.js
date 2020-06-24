@@ -1,6 +1,6 @@
 // const Server  = require("./server")
-import ManageDB from "./db/ManageDB";
-import Server from "./server.mjs";
+import ManageDB from "./db/ManageDB.js";
+import Server from "./server.js";
 class App {
   start() {
     //Conexao com banco

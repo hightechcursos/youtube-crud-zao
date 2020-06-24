@@ -1,5 +1,5 @@
 import mongoose from "mongoose"
-import UsuarioModel from "../model/usuario-model.mjs"
+import UsuarioModel from "../model/usuario-model.js"
 
 class UsuarioRepositoryMongo {
 

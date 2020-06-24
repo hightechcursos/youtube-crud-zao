@@ -4,7 +4,7 @@
 
 import express from 'express'
 import path from 'path'
-import UsuarioRoutes from "./routes/usuario-routes.mjs"
+import UsuarioRoutes from "./routes/usuario-routes.js"
 import {
   fileURLToPath
 } from 'url';

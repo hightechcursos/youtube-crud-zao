@@ -1,6 +1,6 @@
-import UsuarioRepoArray from "../repositories/usuario-repo-array.mjs"
+import UsuarioRepoArray from "../repositories/usuario-repo-array.js"
 
-import UsuarioRepoMongo from "../repositories/usuario-repo-mongo.mjs"
+import UsuarioRepoMongo from "../repositories/usuario-repo-mongo.js"
 
 class UsuarioService {
 

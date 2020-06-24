@@ -1,5 +1,5 @@
-import UsuarioService from "../services/usuario-service.mjs"
-import Usuario from "../domain/usuario-domain"
+import UsuarioService from "../services/usuario-service.js"
+import Usuario from "../domain/usuario-domain.js"
 
 class UsuarioController {
 
