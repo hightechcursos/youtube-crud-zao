@@ -1,4 +1,4 @@
-import UsuarioModel from "../model/usuario-model"
+import UsuarioModel from "../model/usuario-model.js"
 
 class UsuarioRepositoryMongo{
 

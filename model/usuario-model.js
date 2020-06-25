@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import Usuario from "../domain/usuario-domain"
+import Usuario from "../domain/usuario-domain.js"
 //Definindo o modelo (estrutura da collection)
 const UsuarioSchema = mongoose.Schema(
     { 

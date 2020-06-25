@@ -1,5 +1,5 @@
 import express from "express"
-import UsuarioController from "../controllers/usuario-controller"
+import UsuarioController from "../controllers/usuario-controller.js"
 
 class UsuarioRoutes{
 

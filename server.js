@@ -1,7 +1,7 @@
 import express from "express"
 import path from "path"
-import UsuarioRoutes from "./routes/usuario-routes"
-
+import UsuarioRoutes from "./routes/usuario-routes.js"
+import {fileURLToPath} from "url"
 class Server {
 
   constructor() {
@@ -14,6 +14,9 @@ class Server {
 
  
     start(){
+
+      
+      const __dirname = path.dirname(fileURLToPath(import.meta.url))
        //express middlewares
       this.app.use(express.json())
       this.app.use(express.static(path.join(__dirname, 'public')))

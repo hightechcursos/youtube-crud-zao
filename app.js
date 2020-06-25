@@ -1,7 +1,5 @@
 import Server  from "./server.js"
-import ManageDB from "./db/ManageDB"
-
-//ES module
+import ManageDB from "./db/ManageDB.js"
 
 class App{
 
